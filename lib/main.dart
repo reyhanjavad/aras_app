@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveling_app/screens/categories_screen.dart';
+import 'package:aras_app/screens/categories_screen.dart';
 
 void main() {
   runApp(MyApp()); 

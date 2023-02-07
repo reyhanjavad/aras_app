@@ -1,9 +1,9 @@
-
-//import 'package:traveling_app/app_data.dart';
-//import 'package:traveling_app/models/category.dart';
+//import 'package:aras_app/app_data.dart';
+//import 'package:aras_app/models/category.dart';
 import 'package:flutter/material.dart';
 import '../app_data.dart';
 import '../widget/category_item.dart';
+
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Anadolu Universite'),
       ),
-      body:  GridView(
+      body: GridView(
         padding: EdgeInsets.all(10),
         //رح يخلي حجم الكونتنرات مناسب لحجم الشاشة  كلما كبرت الشاشة بيعرض كونتنرات اكتر على نفس المستوى
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -20,12 +20,12 @@ class CategoriesScreen extends StatelessWidget {
           //فراغات بين العناصر بشكل افقي
           mainAxisSpacing: 10,
           //رح تحدد ارتفاع الكونتنر بشكل تناسبي الارتفاع ضعف العرض مثلا
-          childAspectRatio: 7/8,
+          childAspectRatio: 7 / 8,
           maxCrossAxisExtent: 250,
         ),
         children: Categories_data.map(
-          (categoryData) =>
-              CategoryItem(categoryData.id, categoryData.title, categoryData.imageUrl),
+          (categoryData) => CategoryItem(
+              categoryData.id, categoryData.title, categoryData.imageUrl),
         ).toList(),
       ),
     );
