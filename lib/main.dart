@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:aras_app/screens/categories_screen.dart';
+import './screens/category_trips_screen.dart';
 
 void main() {
-  runApp(MyApp()); 
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +14,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CategoriesScreen(),
+      //الشاشة الافتراضية يلي بتطلع للمستخدم اول ما يفتح التطبيق
+      //home: CategoriesScreen(),
+
+
+      //لتعيين المسار الرئيسي والافتراضي للتطبيق 
+       initialRoute :'/' ,
+      //للتنقل بين الصفحات +ضافة مسارات الصفحات +تاخذ القيم على شكل ماب
+      //رح تحتوي الراوتس على مسارات صفحاتنا يلي رح تنعرض عالشاشة
+      routes: {
+        //تم استبدال الهوم بهذا السطر في الاسفل
+       
+        '/': (ctx) => CategoriesScreen(),
+        CategoryTripsScreen.screenRoute: (ctx) => CategoryTripsScreen(),
+      },
     );
   }
 }

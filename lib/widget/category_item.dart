@@ -9,13 +9,20 @@ class CategoryItem extends StatelessWidget {
   final String imageUrl;
 
   CategoryItem(this.id, this.title, this.imageUrl);
+
   void selectCategory(BuildContext ctx) {
     //..كلاس مبني للتنقل بين الصفحات.. يلي بين الاقواس لربطها بالويدجت
-    Navigator.of(ctx).push(
-      MaterialPageRoute(
-        builder: (c) => CategoryTripsScreen(id,title),
-      ),
+    //رح ياخد قيمة مسار الصفحة يلي رح يفتحهاى ويعملها بوش يعني فتح+
+    Navigator.of(ctx).pushNamed(
+      CategoryTripsScreen.screenRoute,
+       arguments: {
+      'id': id,
+      'title': title,
+    },
     );
+    /*MaterialPageRoute(
+        builder: (c) => CategoryTripsScreen(id,title),
+      ),*/
   }
 
   @override
